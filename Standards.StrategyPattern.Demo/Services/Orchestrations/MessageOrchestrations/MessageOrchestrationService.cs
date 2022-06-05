@@ -14,11 +14,11 @@ namespace Standards.StrategyPattern.Demo.Services.Orchestrations.MessageOrchestr
 {
     public partial class MessageOrchestrationService : IMessageOrchestrationService
     {
-        private readonly ICollection<IMessageProcessor> messageProcessors;
+        private readonly IEnumerable<IMessageProcessor> messageProcessors;
         private readonly ILoggingBroker loggingBroker;
 
         public MessageOrchestrationService(
-            ICollection<IMessageProcessor> messageProcessors,
+            IEnumerable<IMessageProcessor> messageProcessors,
             ILoggingBroker loggingBroker)
         {
             this.messageProcessors = messageProcessors;
